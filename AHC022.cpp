@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <set>
 #include <queue>
+#include <cmath>
 #include <fstream>
 #define INF 1e9
 #define vi vector<int>
@@ -38,6 +39,11 @@ struct Solver{
 
 
 int main(){
+    int l, n, s; cin >> l >> n >> s;
+    vector<vec2> exitvec(n);
+    //全て異なり、辞書順に与えられる
+    for(int i=0; i<n; i++) cin >> exitvec[i].y >> exitvec[i].x;
+
 
     return 0;
 }
