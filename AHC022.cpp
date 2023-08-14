@@ -150,6 +150,7 @@ struct Solver{
 
         vi estimate(N, 0);
         const int threshold = 600;
+        int measure_cnt = 0;
 
         for(int i=0; i<N; i++){
             int mxcnt = -1, mxj = -1;
@@ -167,11 +168,16 @@ struct Solver{
                     int dx = nb.x - base.x;
                     
                     int v = judge.measure(i, dy, dx);
+                    measure_cnt++;
+                    if(measure_cnt>=max_measure) break;
 
                     //出口セルか否かここで判断する
                     if(v < threshold) flag = false;
                     else truecnt++;
                 }
+
+                if(measure_cnt>=max_measure) break;
+
                 //フラグがtrueなら全てが出口セルだったので元の出口セルを予測値とする
                 if(flag){
                     assigned = true;
@@ -185,6 +191,8 @@ struct Solver{
                     mxj = j;
                 }
             }
+
+            if(measure_cnt>=max_measure) break;
             if(!assigned) estimate[i] = mxj; //一番多く出口セルだったjを予測値として採用する
         }
         return estimate;
