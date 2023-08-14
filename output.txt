@@ -52,381 +52,2091 @@
 # measure i=0 y=0 x=0
 0 0 0
 # pre return value = 818
+0 0 0
+# pre return value = 814
+0 0 0
+# pre return value = 842
+0 0 0
+# pre return value = 815
+0 0 0
+# pre return value = 783
+0 0 0
+# pre return value = 767
+0 0 0
+# pre return value = 755
+0 0 0
+# pre return value = 753
+0 0 0
+# pre return value = 785
+0 0 0
+# pre return value = 765
 # measure i=1 y=0 x=0
 1 0 0
-# pre return value = 924
+# pre return value = 910
+1 0 0
+# pre return value = 881
+1 0 0
+# pre return value = 902
+1 0 0
+# pre return value = 892
+1 0 0
+# pre return value = 938
+1 0 0
+# pre return value = 856
+1 0 0
+# pre return value = 875
+1 0 0
+# pre return value = 884
+1 0 0
+# pre return value = 882
+1 0 0
+# pre return value = 905
 # measure i=2 y=0 x=0
 2 0 0
-# pre return value = 162
+# pre return value = 122
+2 0 0
+# pre return value = 159
+2 0 0
+# pre return value = 142
+2 0 0
+# pre return value = 129
+2 0 0
+# pre return value = 82
+2 0 0
+# pre return value = 126
+2 0 0
+# pre return value = 155
+2 0 0
+# pre return value = 128
+2 0 0
+# pre return value = 71
+2 0 0
+# pre return value = 128
 # measure i=3 y=0 x=0
 3 0 0
-# pre return value = 745
+# pre return value = 729
+3 0 0
+# pre return value = 738
+3 0 0
+# pre return value = 685
+3 0 0
+# pre return value = 712
+3 0 0
+# pre return value = 750
+3 0 0
+# pre return value = 775
+3 0 0
+# pre return value = 674
+3 0 0
+# pre return value = 740
+3 0 0
+# pre return value = 723
+3 0 0
+# pre return value = 753
 # measure i=4 y=0 x=0
 4 0 0
-# pre return value = 153
+# pre return value = 159
+4 0 0
+# pre return value = 56
+4 0 0
+# pre return value = 154
+4 0 0
+# pre return value = 143
+4 0 0
+# pre return value = 152
+4 0 0
+# pre return value = 189
+4 0 0
+# pre return value = 147
+4 0 0
+# pre return value = 157
+4 0 0
+# pre return value = 154
+4 0 0
+# pre return value = 185
 # measure i=5 y=0 x=0
 5 0 0
-# pre return value = 717
+# pre return value = 744
+5 0 0
+# pre return value = 759
+5 0 0
+# pre return value = 765
+5 0 0
+# pre return value = 751
+5 0 0
+# pre return value = 746
+5 0 0
+# pre return value = 731
+5 0 0
+# pre return value = 785
+5 0 0
+# pre return value = 678
+5 0 0
+# pre return value = 746
+5 0 0
+# pre return value = 734
 # measure i=6 y=0 x=0
 6 0 0
-# pre return value = 655
+# pre return value = 659
+6 0 0
+# pre return value = 692
+6 0 0
+# pre return value = 703
+6 0 0
+# pre return value = 702
+6 0 0
+# pre return value = 666
+6 0 0
+# pre return value = 705
+6 0 0
+# pre return value = 701
+6 0 0
+# pre return value = 703
+6 0 0
+# pre return value = 643
+6 0 0
+# pre return value = 663
 # measure i=7 y=0 x=0
 7 0 0
-# pre return value = 203
+# pre return value = 262
+7 0 0
+# pre return value = 237
+7 0 0
+# pre return value = 242
+7 0 0
+# pre return value = 247
+7 0 0
+# pre return value = 270
+7 0 0
+# pre return value = 311
+7 0 0
+# pre return value = 218
+7 0 0
+# pre return value = 227
+7 0 0
+# pre return value = 246
+7 0 0
+# pre return value = 276
 # measure i=8 y=0 x=0
 8 0 0
-# pre return value = 575
+# pre return value = 549
+8 0 0
+# pre return value = 581
+8 0 0
+# pre return value = 614
+8 0 0
+# pre return value = 588
+8 0 0
+# pre return value = 504
+8 0 0
+# pre return value = 563
+8 0 0
+# pre return value = 592
+8 0 0
+# pre return value = 542
+8 0 0
+# pre return value = 590
+8 0 0
+# pre return value = 582
 # measure i=9 y=0 x=0
 9 0 0
-# pre return value = 455
+# pre return value = 493
+9 0 0
+# pre return value = 516
+9 0 0
+# pre return value = 537
+9 0 0
+# pre return value = 421
+9 0 0
+# pre return value = 488
+9 0 0
+# pre return value = 449
+9 0 0
+# pre return value = 521
+9 0 0
+# pre return value = 466
+9 0 0
+# pre return value = 497
+9 0 0
+# pre return value = 479
 # measure i=10 y=0 x=0
 10 0 0
-# pre return value = 240
+# pre return value = 256
+10 0 0
+# pre return value = 236
+10 0 0
+# pre return value = 223
+10 0 0
+# pre return value = 165
+10 0 0
+# pre return value = 273
+10 0 0
+# pre return value = 257
+10 0 0
+# pre return value = 192
+10 0 0
+# pre return value = 238
+10 0 0
+# pre return value = 255
+10 0 0
+# pre return value = 244
 # measure i=11 y=0 x=0
 11 0 0
-# pre return value = 131
+# pre return value = 149
+11 0 0
+# pre return value = 177
+11 0 0
+# pre return value = 190
+11 0 0
+# pre return value = 130
+11 0 0
+# pre return value = 208
+11 0 0
+# pre return value = 136
+11 0 0
+# pre return value = 175
+11 0 0
+# pre return value = 114
+11 0 0
+# pre return value = 193
+11 0 0
+# pre return value = 176
 # measure i=12 y=0 x=0
 12 0 0
-# pre return value = 702
+# pre return value = 727
+12 0 0
+# pre return value = 680
+12 0 0
+# pre return value = 716
+12 0 0
+# pre return value = 623
+12 0 0
+# pre return value = 713
+12 0 0
+# pre return value = 712
+12 0 0
+# pre return value = 679
+12 0 0
+# pre return value = 681
+12 0 0
+# pre return value = 713
+12 0 0
+# pre return value = 669
 # measure i=13 y=0 x=0
 13 0 0
-# pre return value = 792
+# pre return value = 834
+13 0 0
+# pre return value = 800
+13 0 0
+# pre return value = 795
+13 0 0
+# pre return value = 867
+13 0 0
+# pre return value = 799
+13 0 0
+# pre return value = 780
+13 0 0
+# pre return value = 786
+13 0 0
+# pre return value = 814
+13 0 0
+# pre return value = 765
+13 0 0
+# pre return value = 787
 # measure i=14 y=0 x=0
 14 0 0
-# pre return value = 608
+# pre return value = 590
+14 0 0
+# pre return value = 562
+14 0 0
+# pre return value = 579
+14 0 0
+# pre return value = 616
+14 0 0
+# pre return value = 577
+14 0 0
+# pre return value = 557
+14 0 0
+# pre return value = 622
+14 0 0
+# pre return value = 625
+14 0 0
+# pre return value = 617
+14 0 0
+# pre return value = 615
 # measure i=15 y=0 x=0
 15 0 0
-# pre return value = 466
+# pre return value = 528
+15 0 0
+# pre return value = 525
+15 0 0
+# pre return value = 508
+15 0 0
+# pre return value = 517
+15 0 0
+# pre return value = 583
+15 0 0
+# pre return value = 471
+15 0 0
+# pre return value = 429
+15 0 0
+# pre return value = 515
+15 0 0
+# pre return value = 497
+15 0 0
+# pre return value = 530
 # measure i=16 y=0 x=0
 16 0 0
-# pre return value = 195
+# pre return value = 220
+16 0 0
+# pre return value = 214
+16 0 0
+# pre return value = 235
+16 0 0
+# pre return value = 141
+16 0 0
+# pre return value = 184
+16 0 0
+# pre return value = 202
+16 0 0
+# pre return value = 267
+16 0 0
+# pre return value = 266
+16 0 0
+# pre return value = 207
+16 0 0
+# pre return value = 246
 # measure i=17 y=0 x=0
 17 0 0
-# pre return value = 44
+# pre return value = 97
+17 0 0
+# pre return value = 92
+17 0 0
+# pre return value = 7
+17 0 0
+# pre return value = 108
+17 0 0
+# pre return value = 0
+17 0 0
+# pre return value = 58
+17 0 0
+# pre return value = 22
+17 0 0
+# pre return value = 57
+17 0 0
+# pre return value = 93
+17 0 0
+# pre return value = 36
 # measure i=18 y=0 x=0
 18 0 0
+# pre return value = 539
+18 0 0
 # pre return value = 482
+18 0 0
+# pre return value = 439
+18 0 0
+# pre return value = 510
+18 0 0
+# pre return value = 495
+18 0 0
+# pre return value = 559
+18 0 0
+# pre return value = 520
+18 0 0
+# pre return value = 541
+18 0 0
+# pre return value = 463
+18 0 0
+# pre return value = 510
 # measure i=19 y=0 x=0
 19 0 0
-# pre return value = 375
+# pre return value = 385
+19 0 0
+# pre return value = 383
+19 0 0
+# pre return value = 367
+19 0 0
+# pre return value = 372
+19 0 0
+# pre return value = 376
+19 0 0
+# pre return value = 383
+19 0 0
+# pre return value = 382
+19 0 0
+# pre return value = 399
+19 0 0
+# pre return value = 359
+19 0 0
+# pre return value = 304
 # measure i=20 y=0 x=0
 20 0 0
-# pre return value = 462
+# pre return value = 413
+20 0 0
+# pre return value = 477
+20 0 0
+# pre return value = 446
+20 0 0
+# pre return value = 432
+20 0 0
+# pre return value = 476
+20 0 0
+# pre return value = 424
+20 0 0
+# pre return value = 448
+20 0 0
+# pre return value = 479
+20 0 0
+# pre return value = 469
+20 0 0
+# pre return value = 508
 # measure i=21 y=0 x=0
 21 0 0
+# pre return value = 138
+21 0 0
 # pre return value = 119
+21 0 0
+# pre return value = 94
+21 0 0
+# pre return value = 23
+21 0 0
+# pre return value = 56
+21 0 0
+# pre return value = 60
+21 0 0
+# pre return value = 57
+21 0 0
+# pre return value = 76
+21 0 0
+# pre return value = 116
+21 0 0
+# pre return value = 60
 # measure i=22 y=0 x=0
 22 0 0
-# pre return value = 152
+# pre return value = 142
+22 0 0
+# pre return value = 156
+22 0 0
+# pre return value = 132
+22 0 0
+# pre return value = 174
+22 0 0
+# pre return value = 136
+22 0 0
+# pre return value = 245
+22 0 0
+# pre return value = 69
+22 0 0
+# pre return value = 116
+22 0 0
+# pre return value = 105
+22 0 0
+# pre return value = 96
 # measure i=23 y=0 x=0
 23 0 0
-# pre return value = 629
+# pre return value = 617
+23 0 0
+# pre return value = 576
+23 0 0
+# pre return value = 606
+23 0 0
+# pre return value = 553
+23 0 0
+# pre return value = 604
+23 0 0
+# pre return value = 598
+23 0 0
+# pre return value = 621
+23 0 0
+# pre return value = 632
+23 0 0
+# pre return value = 624
+23 0 0
+# pre return value = 651
 # measure i=24 y=0 x=0
 24 0 0
-# pre return value = 262
+# pre return value = 303
+24 0 0
+# pre return value = 322
+24 0 0
+# pre return value = 265
+24 0 0
+# pre return value = 309
+24 0 0
+# pre return value = 304
+24 0 0
+# pre return value = 319
+24 0 0
+# pre return value = 318
+24 0 0
+# pre return value = 285
+24 0 0
+# pre return value = 354
+24 0 0
+# pre return value = 322
 # measure i=25 y=0 x=0
 25 0 0
-# pre return value = 956
+# pre return value = 966
+25 0 0
+# pre return value = 889
+25 0 0
+# pre return value = 939
+25 0 0
+# pre return value = 920
+25 0 0
+# pre return value = 937
+25 0 0
+# pre return value = 923
+25 0 0
+# pre return value = 931
+25 0 0
+# pre return value = 951
+25 0 0
+# pre return value = 938
+25 0 0
+# pre return value = 931
 # measure i=26 y=0 x=0
 26 0 0
-# pre return value = 935
+# pre return value = 917
+26 0 0
+# pre return value = 956
+26 0 0
+# pre return value = 871
+26 0 0
+# pre return value = 891
+26 0 0
+# pre return value = 940
+26 0 0
+# pre return value = 917
+26 0 0
+# pre return value = 971
+26 0 0
+# pre return value = 867
+26 0 0
+# pre return value = 914
+26 0 0
+# pre return value = 860
 # measure i=27 y=0 x=0
 27 0 0
-# pre return value = 888
+# pre return value = 860
+27 0 0
+# pre return value = 897
+27 0 0
+# pre return value = 862
+27 0 0
+# pre return value = 837
+27 0 0
+# pre return value = 860
+27 0 0
+# pre return value = 866
+27 0 0
+# pre return value = 892
+27 0 0
+# pre return value = 827
+27 0 0
+# pre return value = 839
+27 0 0
+# pre return value = 849
 # measure i=28 y=0 x=0
 28 0 0
-# pre return value = 11
+# pre return value = 60
+28 0 0
+# pre return value = 33
+28 0 0
+# pre return value = 88
+28 0 0
+# pre return value = 88
+28 0 0
+# pre return value = 108
+28 0 0
+# pre return value = 49
+28 0 0
+# pre return value = 0
+28 0 0
+# pre return value = 32
+28 0 0
+# pre return value = 32
+28 0 0
+# pre return value = 81
 # measure i=29 y=0 x=0
 29 0 0
-# pre return value = 448
+# pre return value = 445
+29 0 0
+# pre return value = 417
+29 0 0
+# pre return value = 420
+29 0 0
+# pre return value = 428
+29 0 0
+# pre return value = 409
+29 0 0
+# pre return value = 485
+29 0 0
+# pre return value = 434
+29 0 0
+# pre return value = 384
+29 0 0
+# pre return value = 430
+29 0 0
+# pre return value = 433
 # measure i=30 y=0 x=0
 30 0 0
-# pre return value = 819
+# pre return value = 781
+30 0 0
+# pre return value = 778
+30 0 0
+# pre return value = 778
+30 0 0
+# pre return value = 771
+30 0 0
+# pre return value = 811
+30 0 0
+# pre return value = 822
+30 0 0
+# pre return value = 749
+30 0 0
+# pre return value = 767
+30 0 0
+# pre return value = 800
+30 0 0
+# pre return value = 841
 # measure i=31 y=0 x=0
 31 0 0
-# pre return value = 278
+# pre return value = 289
+31 0 0
+# pre return value = 240
+31 0 0
+# pre return value = 187
+31 0 0
+# pre return value = 264
+31 0 0
+# pre return value = 311
+31 0 0
+# pre return value = 214
+31 0 0
+# pre return value = 248
+31 0 0
+# pre return value = 260
+31 0 0
+# pre return value = 257
+31 0 0
+# pre return value = 273
 # measure i=32 y=0 x=0
 32 0 0
-# pre return value = 45
+# pre return value = 68
+32 0 0
+# pre return value = 50
+32 0 0
+# pre return value = 6
+32 0 0
+# pre return value = 59
+32 0 0
+# pre return value = 57
+32 0 0
+# pre return value = 61
+32 0 0
+# pre return value = 18
+32 0 0
+# pre return value = 1
+32 0 0
+# pre return value = 41
+32 0 0
+# pre return value = 99
 # measure i=33 y=0 x=0
 33 0 0
-# pre return value = 552
+# pre return value = 607
+33 0 0
+# pre return value = 570
+33 0 0
+# pre return value = 538
+33 0 0
+# pre return value = 539
+33 0 0
+# pre return value = 589
+33 0 0
+# pre return value = 555
+33 0 0
+# pre return value = 598
+33 0 0
+# pre return value = 541
+33 0 0
+# pre return value = 599
+33 0 0
+# pre return value = 528
 # measure i=34 y=0 x=0
 34 0 0
+# pre return value = 62
+34 0 0
 # pre return value = 130
+34 0 0
+# pre return value = 78
+34 0 0
+# pre return value = 140
+34 0 0
+# pre return value = 104
+34 0 0
+# pre return value = 147
+34 0 0
+# pre return value = 89
+34 0 0
+# pre return value = 94
+34 0 0
+# pre return value = 83
+34 0 0
+# pre return value = 106
 # measure i=35 y=0 x=0
 35 0 0
-# pre return value = 55
+# pre return value = 0
+35 0 0
+# pre return value = 38
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 0
+35 0 0
+# pre return value = 10
 # measure i=36 y=0 x=0
 36 0 0
-# pre return value = 264
+# pre return value = 326
+36 0 0
+# pre return value = 282
+36 0 0
+# pre return value = 362
+36 0 0
+# pre return value = 329
+36 0 0
+# pre return value = 308
+36 0 0
+# pre return value = 316
+36 0 0
+# pre return value = 390
+36 0 0
+# pre return value = 276
+36 0 0
+# pre return value = 311
+36 0 0
+# pre return value = 328
 # measure i=37 y=0 x=0
 37 0 0
-# pre return value = 460
+# pre return value = 402
+37 0 0
+# pre return value = 445
+37 0 0
+# pre return value = 428
+37 0 0
+# pre return value = 475
+37 0 0
+# pre return value = 442
+37 0 0
+# pre return value = 432
+37 0 0
+# pre return value = 430
+37 0 0
+# pre return value = 457
+37 0 0
+# pre return value = 450
+37 0 0
+# pre return value = 383
 # measure i=38 y=0 x=0
 38 0 0
+# pre return value = 55
+38 0 0
+# pre return value = 86
+38 0 0
+# pre return value = 46
+38 0 0
+# pre return value = 4
+38 0 0
+# pre return value = 66
+38 0 0
 # pre return value = 93
+38 0 0
+# pre return value = 100
+38 0 0
+# pre return value = 128
+38 0 0
+# pre return value = 146
+38 0 0
+# pre return value = 83
 # measure i=39 y=0 x=0
 39 0 0
-# pre return value = 243
+# pre return value = 202
+39 0 0
+# pre return value = 234
+39 0 0
+# pre return value = 251
+39 0 0
+# pre return value = 225
+39 0 0
+# pre return value = 242
+39 0 0
+# pre return value = 227
+39 0 0
+# pre return value = 146
+39 0 0
+# pre return value = 212
+39 0 0
+# pre return value = 284
+39 0 0
+# pre return value = 172
 # measure i=40 y=0 x=0
 40 0 0
-# pre return value = 679
+# pre return value = 646
+40 0 0
+# pre return value = 677
+40 0 0
+# pre return value = 655
+40 0 0
+# pre return value = 664
+40 0 0
+# pre return value = 684
+40 0 0
+# pre return value = 680
+40 0 0
+# pre return value = 719
+40 0 0
+# pre return value = 736
+40 0 0
+# pre return value = 691
+40 0 0
+# pre return value = 784
 # measure i=41 y=0 x=0
 41 0 0
-# pre return value = 826
+# pre return value = 930
+41 0 0
+# pre return value = 943
+41 0 0
+# pre return value = 901
+41 0 0
+# pre return value = 924
+41 0 0
+# pre return value = 933
+41 0 0
+# pre return value = 891
+41 0 0
+# pre return value = 878
+41 0 0
+# pre return value = 908
+41 0 0
+# pre return value = 872
+41 0 0
+# pre return value = 964
 # measure i=42 y=0 x=0
 42 0 0
-# pre return value = 354
+# pre return value = 330
+42 0 0
+# pre return value = 356
+42 0 0
+# pre return value = 342
+42 0 0
+# pre return value = 397
+42 0 0
+# pre return value = 312
+42 0 0
+# pre return value = 339
+42 0 0
+# pre return value = 338
+42 0 0
+# pre return value = 364
+42 0 0
+# pre return value = 414
+42 0 0
+# pre return value = 312
 # measure i=43 y=0 x=0
 43 0 0
-# pre return value = 383
+# pre return value = 389
+43 0 0
+# pre return value = 401
+43 0 0
+# pre return value = 379
+43 0 0
+# pre return value = 405
+43 0 0
+# pre return value = 436
+43 0 0
+# pre return value = 388
+43 0 0
+# pre return value = 427
+43 0 0
+# pre return value = 437
+43 0 0
+# pre return value = 447
+43 0 0
+# pre return value = 416
 # measure i=44 y=0 x=0
 44 0 0
-# pre return value = 612
+# pre return value = 615
+44 0 0
+# pre return value = 609
+44 0 0
+# pre return value = 618
+44 0 0
+# pre return value = 582
+44 0 0
+# pre return value = 554
+44 0 0
+# pre return value = 565
+44 0 0
+# pre return value = 641
+44 0 0
+# pre return value = 599
+44 0 0
+# pre return value = 624
+44 0 0
+# pre return value = 565
 # measure i=45 y=0 x=0
 45 0 0
-# pre return value = 679
+# pre return value = 667
+45 0 0
+# pre return value = 612
+45 0 0
+# pre return value = 695
+45 0 0
+# pre return value = 662
+45 0 0
+# pre return value = 692
+45 0 0
+# pre return value = 631
+45 0 0
+# pre return value = 706
+45 0 0
+# pre return value = 647
+45 0 0
+# pre return value = 615
+45 0 0
+# pre return value = 635
 # measure i=46 y=0 x=0
 46 0 0
-# pre return value = 897
+# pre return value = 907
+46 0 0
+# pre return value = 957
+46 0 0
+# pre return value = 928
+46 0 0
+# pre return value = 892
+46 0 0
+# pre return value = 889
+46 0 0
+# pre return value = 881
+46 0 0
+# pre return value = 879
+46 0 0
+# pre return value = 898
+46 0 0
+# pre return value = 807
+46 0 0
+# pre return value = 912
 # measure i=47 y=0 x=0
 47 0 0
 # pre return value = 847
+47 0 0
+# pre return value = 919
+47 0 0
+# pre return value = 828
+47 0 0
+# pre return value = 834
+47 0 0
+# pre return value = 838
+47 0 0
+# pre return value = 795
+47 0 0
+# pre return value = 806
+47 0 0
+# pre return value = 862
+47 0 0
+# pre return value = 850
+47 0 0
+# pre return value = 841
 # measure i=48 y=0 x=0
 48 0 0
-# pre return value = 854
+# pre return value = 849
+48 0 0
+# pre return value = 879
+48 0 0
+# pre return value = 860
+48 0 0
+# pre return value = 870
+48 0 0
+# pre return value = 749
+48 0 0
+# pre return value = 895
+48 0 0
+# pre return value = 886
+48 0 0
+# pre return value = 827
+48 0 0
+# pre return value = 906
+48 0 0
+# pre return value = 865
 # measure i=49 y=0 x=0
 49 0 0
-# pre return value = 515
+# pre return value = 540
+49 0 0
+# pre return value = 525
+49 0 0
+# pre return value = 452
+49 0 0
+# pre return value = 472
+49 0 0
+# pre return value = 481
+49 0 0
+# pre return value = 424
+49 0 0
+# pre return value = 455
+49 0 0
+# pre return value = 532
+49 0 0
+# pre return value = 507
+49 0 0
+# pre return value = 490
 # measure i=50 y=0 x=0
 50 0 0
-# pre return value = 134
+# pre return value = 164
+50 0 0
+# pre return value = 149
+50 0 0
+# pre return value = 96
+50 0 0
+# pre return value = 170
+50 0 0
+# pre return value = 109
+50 0 0
+# pre return value = 130
+50 0 0
+# pre return value = 105
+50 0 0
+# pre return value = 121
+50 0 0
+# pre return value = 222
+50 0 0
+# pre return value = 181
 # measure i=51 y=0 x=0
 51 0 0
-# pre return value = 729
+# pre return value = 791
+51 0 0
+# pre return value = 709
+51 0 0
+# pre return value = 687
+51 0 0
+# pre return value = 673
+51 0 0
+# pre return value = 637
+51 0 0
+# pre return value = 718
+51 0 0
+# pre return value = 734
+51 0 0
+# pre return value = 769
+51 0 0
+# pre return value = 651
+51 0 0
+# pre return value = 735
 # measure i=52 y=0 x=0
 52 0 0
-# pre return value = 295
+# pre return value = 259
+52 0 0
+# pre return value = 340
+52 0 0
+# pre return value = 247
+52 0 0
+# pre return value = 228
+52 0 0
+# pre return value = 272
+52 0 0
+# pre return value = 253
+52 0 0
+# pre return value = 326
+52 0 0
+# pre return value = 258
+52 0 0
+# pre return value = 326
+52 0 0
+# pre return value = 269
 # measure i=53 y=0 x=0
 53 0 0
-# pre return value = 851
+# pre return value = 795
+53 0 0
+# pre return value = 848
+53 0 0
+# pre return value = 855
+53 0 0
+# pre return value = 860
+53 0 0
+# pre return value = 798
+53 0 0
+# pre return value = 797
+53 0 0
+# pre return value = 858
+53 0 0
+# pre return value = 832
+53 0 0
+# pre return value = 906
+53 0 0
+# pre return value = 820
 # measure i=54 y=0 x=0
 54 0 0
+# pre return value = 273
+54 0 0
+# pre return value = 193
+54 0 0
+# pre return value = 245
+54 0 0
+# pre return value = 280
+54 0 0
+# pre return value = 258
+54 0 0
 # pre return value = 256
+54 0 0
+# pre return value = 255
+54 0 0
+# pre return value = 277
+54 0 0
+# pre return value = 273
+54 0 0
+# pre return value = 248
 # measure i=55 y=0 x=0
 55 0 0
-# pre return value = 341
+# pre return value = 332
+55 0 0
+# pre return value = 317
+55 0 0
+# pre return value = 401
+55 0 0
+# pre return value = 335
+55 0 0
+# pre return value = 392
+55 0 0
+# pre return value = 381
+55 0 0
+# pre return value = 314
+55 0 0
+# pre return value = 298
+55 0 0
+# pre return value = 334
+55 0 0
+# pre return value = 299
 # measure i=56 y=0 x=0
 56 0 0
-# pre return value = 515
+# pre return value = 453
+56 0 0
+# pre return value = 472
+56 0 0
+# pre return value = 428
+56 0 0
+# pre return value = 416
+56 0 0
+# pre return value = 469
+56 0 0
+# pre return value = 470
+56 0 0
+# pre return value = 480
+56 0 0
+# pre return value = 514
+56 0 0
+# pre return value = 451
+56 0 0
+# pre return value = 514
 # measure i=57 y=0 x=0
 57 0 0
-# pre return value = 218
+# pre return value = 264
+57 0 0
+# pre return value = 257
+57 0 0
+# pre return value = 256
+57 0 0
+# pre return value = 307
+57 0 0
+# pre return value = 285
+57 0 0
+# pre return value = 265
+57 0 0
+# pre return value = 242
+57 0 0
+# pre return value = 296
+57 0 0
+# pre return value = 310
+57 0 0
+# pre return value = 256
 # measure i=58 y=0 x=0
 58 0 0
-# pre return value = 426
+# pre return value = 385
+58 0 0
+# pre return value = 393
+58 0 0
+# pre return value = 372
+58 0 0
+# pre return value = 470
+58 0 0
+# pre return value = 414
+58 0 0
+# pre return value = 405
+58 0 0
+# pre return value = 408
+58 0 0
+# pre return value = 470
+58 0 0
+# pre return value = 399
+58 0 0
+# pre return value = 394
 # measure i=59 y=0 x=0
 59 0 0
-# pre return value = 744
+# pre return value = 727
+59 0 0
+# pre return value = 730
+59 0 0
+# pre return value = 758
+59 0 0
+# pre return value = 740
+59 0 0
+# pre return value = 730
+59 0 0
+# pre return value = 751
+59 0 0
+# pre return value = 766
+59 0 0
+# pre return value = 757
+59 0 0
+# pre return value = 814
+59 0 0
+# pre return value = 800
 # measure i=60 y=0 x=0
 60 0 0
-# pre return value = 139
+# pre return value = 212
+60 0 0
+# pre return value = 126
+60 0 0
+# pre return value = 184
+60 0 0
+# pre return value = 131
+60 0 0
+# pre return value = 130
+60 0 0
+# pre return value = 149
+60 0 0
+# pre return value = 175
+60 0 0
+# pre return value = 143
+60 0 0
+# pre return value = 187
+60 0 0
+# pre return value = 227
 # measure i=61 y=0 x=0
 61 0 0
-# pre return value = 882
+# pre return value = 918
+61 0 0
+# pre return value = 853
+61 0 0
+# pre return value = 880
+61 0 0
+# pre return value = 900
+61 0 0
+# pre return value = 822
+61 0 0
+# pre return value = 839
+61 0 0
+# pre return value = 842
+61 0 0
+# pre return value = 890
+61 0 0
+# pre return value = 831
+61 0 0
+# pre return value = 805
 # measure i=62 y=0 x=0
 62 0 0
-# pre return value = 683
+# pre return value = 673
+62 0 0
+# pre return value = 712
+62 0 0
+# pre return value = 678
+62 0 0
+# pre return value = 681
+62 0 0
+# pre return value = 692
+62 0 0
+# pre return value = 692
+62 0 0
+# pre return value = 666
+62 0 0
+# pre return value = 685
+62 0 0
+# pre return value = 612
+62 0 0
+# pre return value = 671
 # measure i=63 y=0 x=0
 63 0 0
-# pre return value = 652
+# pre return value = 625
+63 0 0
+# pre return value = 616
+63 0 0
+# pre return value = 695
+63 0 0
+# pre return value = 711
+63 0 0
+# pre return value = 646
+63 0 0
+# pre return value = 668
+63 0 0
+# pre return value = 617
+63 0 0
+# pre return value = 630
+63 0 0
+# pre return value = 605
+63 0 0
+# pre return value = 691
 # measure i=64 y=0 x=0
 64 0 0
-# pre return value = 756
+# pre return value = 793
+64 0 0
+# pre return value = 704
+64 0 0
+# pre return value = 714
+64 0 0
+# pre return value = 773
+64 0 0
+# pre return value = 759
+64 0 0
+# pre return value = 810
+64 0 0
+# pre return value = 819
+64 0 0
+# pre return value = 726
+64 0 0
+# pre return value = 709
+64 0 0
+# pre return value = 759
 # measure i=65 y=0 x=0
 65 0 0
-# pre return value = 845
+# pre return value = 829
+65 0 0
+# pre return value = 886
+65 0 0
+# pre return value = 863
+65 0 0
+# pre return value = 837
+65 0 0
+# pre return value = 792
+65 0 0
+# pre return value = 835
+65 0 0
+# pre return value = 860
+65 0 0
+# pre return value = 789
+65 0 0
+# pre return value = 847
+65 0 0
+# pre return value = 818
 # measure i=66 y=0 x=0
 66 0 0
-# pre return value = 471
+# pre return value = 487
+66 0 0
+# pre return value = 375
+66 0 0
+# pre return value = 461
+66 0 0
+# pre return value = 439
+66 0 0
+# pre return value = 515
+66 0 0
+# pre return value = 472
+66 0 0
+# pre return value = 393
+66 0 0
+# pre return value = 515
+66 0 0
+# pre return value = 427
+66 0 0
+# pre return value = 490
 # measure i=67 y=0 x=0
 67 0 0
-# pre return value = 783
+# pre return value = 772
+67 0 0
+# pre return value = 753
+67 0 0
+# pre return value = 809
+67 0 0
+# pre return value = 707
+67 0 0
+# pre return value = 771
+67 0 0
+# pre return value = 697
+67 0 0
+# pre return value = 731
+67 0 0
+# pre return value = 787
+67 0 0
+# pre return value = 747
+67 0 0
+# pre return value = 746
 # measure i=68 y=0 x=0
 68 0 0
 # pre return value = 273
+68 0 0
+# pre return value = 337
+68 0 0
+# pre return value = 326
+68 0 0
+# pre return value = 275
+68 0 0
+# pre return value = 314
+68 0 0
+# pre return value = 338
+68 0 0
+# pre return value = 344
+68 0 0
+# pre return value = 350
+68 0 0
+# pre return value = 261
+68 0 0
+# pre return value = 270
 # measure i=69 y=0 x=0
 69 0 0
-# pre return value = 13
+# pre return value = 133
+69 0 0
+# pre return value = 57
+69 0 0
+# pre return value = 24
+69 0 0
+# pre return value = 95
+69 0 0
+# pre return value = 118
+69 0 0
+# pre return value = 0
+69 0 0
+# pre return value = 28
+69 0 0
+# pre return value = 32
+69 0 0
+# pre return value = 34
+69 0 0
+# pre return value = 46
 # measure i=70 y=0 x=0
 70 0 0
-# pre return value = 622
+# pre return value = 578
+70 0 0
+# pre return value = 616
+70 0 0
+# pre return value = 618
+70 0 0
+# pre return value = 582
+70 0 0
+# pre return value = 591
+70 0 0
+# pre return value = 597
+70 0 0
+# pre return value = 499
+70 0 0
+# pre return value = 545
+70 0 0
+# pre return value = 565
+70 0 0
+# pre return value = 574
 # measure i=71 y=0 x=0
 71 0 0
-# pre return value = 187
+# pre return value = 184
+71 0 0
+# pre return value = 177
+71 0 0
+# pre return value = 164
+71 0 0
+# pre return value = 218
+71 0 0
+# pre return value = 181
+71 0 0
+# pre return value = 169
+71 0 0
+# pre return value = 219
+71 0 0
+# pre return value = 221
+71 0 0
+# pre return value = 144
+71 0 0
+# pre return value = 163
 # measure i=72 y=0 x=0
 72 0 0
-# pre return value = 532
+# pre return value = 547
+72 0 0
+# pre return value = 509
+72 0 0
+# pre return value = 509
+72 0 0
+# pre return value = 537
+72 0 0
+# pre return value = 594
+72 0 0
+# pre return value = 526
+72 0 0
+# pre return value = 538
+72 0 0
+# pre return value = 529
+72 0 0
+# pre return value = 539
+72 0 0
+# pre return value = 497
 # measure i=73 y=0 x=0
 73 0 0
-# pre return value = 147
+# pre return value = 127
+73 0 0
+# pre return value = 152
+73 0 0
+# pre return value = 177
+73 0 0
+# pre return value = 119
+73 0 0
+# pre return value = 215
+73 0 0
+# pre return value = 128
+73 0 0
+# pre return value = 186
+73 0 0
+# pre return value = 98
+73 0 0
+# pre return value = 119
+73 0 0
+# pre return value = 150
 # measure i=74 y=0 x=0
 74 0 0
-# pre return value = 210
+# pre return value = 181
+74 0 0
+# pre return value = 129
+74 0 0
+# pre return value = 225
+74 0 0
+# pre return value = 208
+74 0 0
+# pre return value = 184
+74 0 0
+# pre return value = 146
+74 0 0
+# pre return value = 223
+74 0 0
+# pre return value = 235
+74 0 0
+# pre return value = 176
+74 0 0
+# pre return value = 190
 # measure i=75 y=0 x=0
 75 0 0
-# pre return value = 271
+# pre return value = 179
+75 0 0
+# pre return value = 182
+75 0 0
+# pre return value = 176
+75 0 0
+# pre return value = 161
+75 0 0
+# pre return value = 190
+75 0 0
+# pre return value = 169
+75 0 0
+# pre return value = 159
+75 0 0
+# pre return value = 215
+75 0 0
+# pre return value = 235
+75 0 0
+# pre return value = 209
 # measure i=76 y=0 x=0
 76 0 0
-# pre return value = 518
+# pre return value = 513
+76 0 0
+# pre return value = 593
+76 0 0
+# pre return value = 537
+76 0 0
+# pre return value = 489
+76 0 0
+# pre return value = 570
+76 0 0
+# pre return value = 517
+76 0 0
+# pre return value = 553
+76 0 0
+# pre return value = 541
+76 0 0
+# pre return value = 553
+76 0 0
+# pre return value = 511
 # measure i=77 y=0 x=0
 77 0 0
-# pre return value = 397
+# pre return value = 368
+77 0 0
+# pre return value = 415
+77 0 0
+# pre return value = 380
+77 0 0
+# pre return value = 404
+77 0 0
+# pre return value = 374
+77 0 0
+# pre return value = 361
+77 0 0
+# pre return value = 394
+77 0 0
+# pre return value = 449
+77 0 0
+# pre return value = 374
+77 0 0
+# pre return value = 410
 # measure i=78 y=0 x=0
 78 0 0
-# pre return value = 26
+# pre return value = 35
+78 0 0
+# pre return value = 0
+78 0 0
+# pre return value = 45
+78 0 0
+# pre return value = 21
+78 0 0
+# pre return value = 47
+78 0 0
+# pre return value = 0
+78 0 0
+# pre return value = 0
+78 0 0
+# pre return value = 0
+78 0 0
+# pre return value = 15
+78 0 0
+# pre return value = 15
 # measure i=79 y=0 x=0
 79 0 0
-# pre return value = 696
+# pre return value = 633
+79 0 0
+# pre return value = 667
+79 0 0
+# pre return value = 725
+79 0 0
+# pre return value = 659
+79 0 0
+# pre return value = 652
+79 0 0
+# pre return value = 601
+79 0 0
+# pre return value = 636
+79 0 0
+# pre return value = 667
+79 0 0
+# pre return value = 737
+79 0 0
+# pre return value = 651
 # measure i=80 y=0 x=0
 80 0 0
-# pre return value = 309
+# pre return value = 308
+80 0 0
+# pre return value = 324
+80 0 0
+# pre return value = 340
+80 0 0
+# pre return value = 369
+80 0 0
+# pre return value = 352
+80 0 0
+# pre return value = 329
+80 0 0
+# pre return value = 452
+80 0 0
+# pre return value = 317
+80 0 0
+# pre return value = 294
+80 0 0
+# pre return value = 383
 # measure i=81 y=0 x=0
 81 0 0
-# pre return value = 591
+# pre return value = 606
+81 0 0
+# pre return value = 602
+81 0 0
+# pre return value = 583
+81 0 0
+# pre return value = 601
+81 0 0
+# pre return value = 559
+81 0 0
+# pre return value = 543
+81 0 0
+# pre return value = 612
+81 0 0
+# pre return value = 596
+81 0 0
+# pre return value = 607
+81 0 0
+# pre return value = 604
 # measure i=82 y=0 x=0
 82 0 0
-# pre return value = 794
+# pre return value = 812
+82 0 0
+# pre return value = 758
+82 0 0
+# pre return value = 782
+82 0 0
+# pre return value = 764
+82 0 0
+# pre return value = 666
+82 0 0
+# pre return value = 792
+82 0 0
+# pre return value = 776
+82 0 0
+# pre return value = 750
+82 0 0
+# pre return value = 760
+82 0 0
+# pre return value = 767
 # measure i=83 y=0 x=0
 83 0 0
-# pre return value = 638
+# pre return value = 630
+83 0 0
+# pre return value = 714
+83 0 0
+# pre return value = 609
+83 0 0
+# pre return value = 624
+83 0 0
+# pre return value = 685
+83 0 0
+# pre return value = 633
+83 0 0
+# pre return value = 691
+83 0 0
+# pre return value = 568
+83 0 0
+# pre return value = 665
+83 0 0
+# pre return value = 632
 # measure i=84 y=0 x=0
 84 0 0
-# pre return value = 474
+# pre return value = 534
+84 0 0
+# pre return value = 536
+84 0 0
+# pre return value = 568
+84 0 0
+# pre return value = 593
+84 0 0
+# pre return value = 592
+84 0 0
+# pre return value = 566
+84 0 0
+# pre return value = 586
+84 0 0
+# pre return value = 520
+84 0 0
+# pre return value = 527
+84 0 0
+# pre return value = 630
 # measure i=85 y=0 x=0
 85 0 0
-# pre return value = 363
+# pre return value = 344
+85 0 0
+# pre return value = 348
+85 0 0
+# pre return value = 410
+85 0 0
+# pre return value = 331
+85 0 0
+# pre return value = 341
+85 0 0
+# pre return value = 370
+85 0 0
+# pre return value = 415
+85 0 0
+# pre return value = 337
+85 0 0
+# pre return value = 381
+85 0 0
+# pre return value = 373
 # measure i=86 y=0 x=0
 86 0 0
-# pre return value = 532
+# pre return value = 474
+86 0 0
+# pre return value = 539
+86 0 0
+# pre return value = 491
+86 0 0
+# pre return value = 625
+86 0 0
+# pre return value = 600
+86 0 0
+# pre return value = 515
+86 0 0
+# pre return value = 591
+86 0 0
+# pre return value = 490
+86 0 0
+# pre return value = 474
+86 0 0
+# pre return value = 523
 # measure i=87 y=0 x=0
+87 0 0
+# pre return value = 982
+87 0 0
+# pre return value = 912
+87 0 0
+# pre return value = 953
+87 0 0
+# pre return value = 896
+87 0 0
+# pre return value = 945
+87 0 0
+# pre return value = 956
+87 0 0
+# pre return value = 937
+87 0 0
+# pre return value = 906
+87 0 0
+# pre return value = 953
 87 0 0
 # pre return value = 882
 # measure i=88 y=0 x=0
 88 0 0
-# pre return value = 400
+# pre return value = 396
+88 0 0
+# pre return value = 399
+88 0 0
+# pre return value = 406
+88 0 0
+# pre return value = 422
+88 0 0
+# pre return value = 336
+88 0 0
+# pre return value = 355
+88 0 0
+# pre return value = 418
+88 0 0
+# pre return value = 411
+88 0 0
+# pre return value = 333
+88 0 0
+# pre return value = 377
 # measure i=89 y=0 x=0
 89 0 0
-# pre return value = 32
+# pre return value = 38
+89 0 0
+# pre return value = 67
+89 0 0
+# pre return value = 21
+89 0 0
+# pre return value = 0
+89 0 0
+# pre return value = 15
+89 0 0
+# pre return value = 47
+89 0 0
+# pre return value = 26
+89 0 0
+# pre return value = 94
+89 0 0
+# pre return value = 58
+89 0 0
+# pre return value = 41
 # measure i=90 y=0 x=0
 90 0 0
-# pre return value = 23
+# pre return value = 15
+90 0 0
+# pre return value = 29
+90 0 0
+# pre return value = 65
+90 0 0
+# pre return value = 45
+90 0 0
+# pre return value = 20
+90 0 0
+# pre return value = 0
+90 0 0
+# pre return value = 38
+90 0 0
+# pre return value = 17
+90 0 0
+# pre return value = 0
+90 0 0
+# pre return value = 37
 # measure i=91 y=0 x=0
 91 0 0
-# pre return value = 366
+# pre return value = 303
+91 0 0
+# pre return value = 296
+91 0 0
+# pre return value = 353
+91 0 0
+# pre return value = 360
+91 0 0
+# pre return value = 288
+91 0 0
+# pre return value = 315
+91 0 0
+# pre return value = 299
+91 0 0
+# pre return value = 341
+91 0 0
+# pre return value = 371
+91 0 0
+# pre return value = 295
 # measure i=92 y=0 x=0
 92 0 0
-# pre return value = 357
+# pre return value = 294
+92 0 0
+# pre return value = 295
+92 0 0
+# pre return value = 222
+92 0 0
+# pre return value = 284
+92 0 0
+# pre return value = 304
+92 0 0
+# pre return value = 300
+92 0 0
+# pre return value = 301
+92 0 0
+# pre return value = 341
+92 0 0
+# pre return value = 283
+92 0 0
+# pre return value = 333
 # measure i=93 y=0 x=0
 93 0 0
+# pre return value = 852
+93 0 0
+# pre return value = 760
+93 0 0
+# pre return value = 753
+93 0 0
+# pre return value = 871
+93 0 0
+# pre return value = 936
+93 0 0
 # pre return value = 761
+93 0 0
+# pre return value = 828
+93 0 0
+# pre return value = 795
+93 0 0
+# pre return value = 788
+93 0 0
+# pre return value = 844
 # measure i=94 y=0 x=0
 94 0 0
-# pre return value = 738
+# pre return value = 793
+94 0 0
+# pre return value = 751
+94 0 0
+# pre return value = 747
+94 0 0
+# pre return value = 731
+94 0 0
+# pre return value = 710
+94 0 0
+# pre return value = 763
+94 0 0
+# pre return value = 744
+94 0 0
+# pre return value = 695
+94 0 0
+# pre return value = 740
+94 0 0
+# pre return value = 746
 -1 -1 -1
-82
-92
-16
-74
-15
-72
-65
-20
-57
-45
-24
-13
-70
 79
-61
-47
-19
-4
-48
-37
-46
-12
-15
-63
-26
-94
-93
 89
-1
-45
-82
-28
-4
-55
-13
-5
-26
-46
-9
-24
-68
-83
-35
-38
-61
-68
-90
-85
-85
-51
-13
+12
 73
-29
-85
-26
-34
+15
+74
+68
+25
+57
+49
+23
+16
+69
+80
+60
 51
 22
-43
-74
+6
+50
+37
+46
+8
 14
-88
+61
+31
+93
+91
+86
+6
+43
+79
+25
+5
+57
+10
+0
+32
+43
+8
+22
+69
+91
+35
+41
+60
+66
+89
+84
+86
+49
+14
+71
+28
+84
+25
+34
+47
+27
+41
+76
+17
+86
 68
 65
 76
-84
-47
-78
-27
-1
-62
-19
+83
+46
+75
+31
+6
+58
+18
 53
 15
-21
-27
-52
-40
-3
-70
-31
+19
+19
+54
+39
+2
+66
+35
 59
-79
+76
 64
-47
+56
 36
 53
-88
-40
+93
+38
+4
 3
-2
-37
-36
-76
+32
+29
+82
 74

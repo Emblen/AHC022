@@ -70,12 +70,16 @@ struct Solver {
             // you can output comment
             cout << "# measure i=" << i_in << " y=0 x=0" << endl;
 
-            int measured_value = judge.measure(i_in, 0, 0);
-            // answer the position with the temperature closest to the measured value
+            int sum = 0;
+            int times = 10;
+            for(int i=0; i<times; i++){
+                sum += judge.measure(i_in, 0, 0);
+            }
+            sum /= times;
             int min_diff = 9999;
             for (int i_out = 0; i_out < N; i_out++) {
                 const Pos& pos = landing_pos[i_out];
-                int diff = abs(temperature[pos.y][pos.x] - measured_value);
+                int diff = abs(temperature[pos.y][pos.x] - sum);
                 if (diff < min_diff) {
                     min_diff = diff;
                     estimate[i_in] = i_out;

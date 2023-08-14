@@ -41,6 +41,13 @@ struct Judge {
         }
     }
 
+    int measure(int i, int y, int x){
+        cout << i << " " << y << " " << x << endl;
+        int v; cin >> v;
+        if (v == -1) exit(1);
+        return v;
+    }
+
     void answer(const vi& estimate){
         cout << "-1 -1 -1" << endl;
         for(int v:estimate) cout << v << endl;
@@ -57,8 +64,93 @@ struct Solver{
     {}
 
     void solve(){
+        const v2i temperature = create_temperature();
+        judge.cout_temperature(temperature);//ヒートマップ出力
+
+        const v2b exit_cell_map = create_cell_map(exit_cell);//出口セルか否かのマップ
+        const vector<vector<vec2>> neighbor = BFS(exit_cell_map);
+
+        const vi estimate = predict(temperature);
+        judge.answer(estimate);
+
+    }
+
+    v2b create_cell_map(const vector<vec2>& exit_cell){
+        v2b exit_cell_map(L, vb(L, false));
+        for(auto v:exit_cell){
+            exit_cell_map[v.y][v.x] = true;
+        }
+        return exit_cell_map;
+    }
+
+    vector<vector<vec2>> BFS(v2b exit_cell_map){
+        vector<vector<vec2>> neighbor(N);
+        const vector<vec2> dydx = {{1,0},{0,1},{-1,0},{0,-1}};
+        const int nb = 2;//近傍の数
+
+        for(int i=0; i<N; i++){
+            vec2 cell = exit_cell[i];
+            v2b visit(L, vb(L, false));
+            
+            //マンハッタン距離が小さい順にキューから取り出す
+            auto c = [](pair<int, vec2> l, pair<int, vec2> r){
+                return l.first==r.first ? l.second<r.second : l.first>r.first;
+            };
+            priority_queue<pair<int, vec2>, vector<pair<int, vec2>>, decltype(c)> pq(c);
+            pq.push({0, cell});
+
+            int cnt = -1;
+            while(cnt<nb){
+                pair<int, vec2> tmp = pq.top();
+                pq.pop();
+                int m_dist = tmp.first;
+                vec2 pv = tmp.second;
+
+                if(visit[pv.y][pv.x]) continue;
+                if(exit_cell_map[pv.y][pv.x]){
+                    if(cnt>=0) neighbor[i].push_back(pv);
+                    cnt++;
+                }    
+                visit[pv.y][pv.x] = true;
+
+                for(auto d:dydx){
+                    int cy = pv.y + d.y;
+                    int cx = pv.x + d.x;
+                    if(cy<0 || cy>=L || cx<0 || cx>=L || visit[cy][cx]) continue;
+                    pq.push({m_dist+1, {cy, cx}});
+                }
+            }
+        }
+
+        for(int i=0; i<N; i++){
+            cout << "# (" << exit_cell[i].y << "," << exit_cell[i].x << ")" << ": ";
+            for(int j=0; j<nb; j++){
+                cout << "(" << neighbor[i][j].y << "," << neighbor[i][j].x << ")" << " ";
+            }
+            cout << endl;
+        }
+        return neighbor;
+    }
+
+    v2i create_temperature(){
+        v2i temperature(L, vi(L, 0));
+        for (int i = 0; i < N; i++) {
+            temperature[exit_cell[i].y][exit_cell[i].x] = 500;
+        }
+        return temperature;
+    }
+    
+    vi predict(const v2i& tempreture){
+        vi estimate(N);
+
+        //全てのワームホールについて、ある出口セルとその近傍の2つの出口セルの差分を出力し、温度の計測を行うことで出口セルかどうか判別する。
 
 
+        for(int i=0; i<N; i++){
+            estimate[i] = i;
+        }
+
+        return estimate;
     }
 
     void calculate_cost(){
@@ -96,7 +188,7 @@ struct LocalJudge {
 
         //インタラクティブ形式の戻り値
         //pvalは、ワームホールiに対応する出口セルの座標+移動量の座標の温度
-        //f[mc](mc=measure_count)は、正規分布からとってきた擬似値
+        //f[(int)measure_cost.size()]は、正規分布からとってきた擬似値
         int v = max(0, min(1000, pval + f[(int)measure_cost.size()]));
         output << "# pre return value = " << v << endl;
         measure_cost.push_back(10 + abs(y) + abs(x));
@@ -154,7 +246,7 @@ struct LocalSolver{
         //     estimate[i] = ans[i];
         // }
         /////////////予測の方法を決める
-        
+
         for (int i_in = 0; i_in < N; i_in++) {
             // you can output comment
             ofstream output;
@@ -165,12 +257,18 @@ struct LocalSolver{
             vec2 land_pos = exit_cell[ans[i_in]];
             vec2 plus = {0, 0};
             int pval = temperature[land_pos.y+plus.y][land_pos.x+plus.x];
-            int measured_value = localjudge.measure(i_in, 0, 0, pval);
+
+            int sum = 0;
+            int times = 10;
+            for(int i=0; i<times; i++){
+                sum += localjudge.measure(i_in, 0, 0, pval);
+            }
+            sum /= times;
 
             int min_diff = 9999;
             for (int i_out = 0; i_out < N; i_out++) {
                 const vec2& pos = exit_cell[i_out];
-                int diff = abs(temperature[pos.y][pos.x] - measured_value);
+                int diff = abs(temperature[pos.y][pos.x] - sum);
                 if (diff < min_diff) {
                     min_diff = diff;
                     estimate[i_in] = i_out;
@@ -186,28 +284,28 @@ struct LocalSolver{
 
 int main(){
 //Submit
-    // int l, n, s; cin >> l >> n >> s;
-    // vector<vec2> exit_cell(n);
-    // //全て異なり、辞書順に与えられる
-    // for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
+    int l, n, s; cin >> l >> n >> s;
+    vector<vec2> exit_cell(n);
+    //全て異なり、辞書順に与えられる
+    for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
 
-    // Solver solver(l, n, s, exit_cell);
-    // solver.solve();
+    Solver solver(l, n, s, exit_cell);
+    solver.solve();
 
 //Local
-    ifstream input(inputfile);
-    int l, n, s;
-    vector<vec2> exit_cell(n);
-    vi ans(n), f(max_measure);
+    // ifstream input(inputfile);
+    // int l, n, s;
+    // vector<vec2> exit_cell(n);
+    // vi ans(n), f(max_measure);
 
-    input >> l >> n >> s;
-    for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
-    for(int i=0; i<n; i++) input >> ans[i];
-    for(int i=0; i<max_measure; i++) input >> f[i];
-    input.close();
+    // input >> l >> n >> s;
+    // for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
+    // for(int i=0; i<n; i++) input >> ans[i];
+    // for(int i=0; i<max_measure; i++) input >> f[i];
+    // input.close();
 
-    LocalSolver localsolver(l, n, s, exit_cell, ans, f);
-    localsolver.solve();
+    // LocalSolver localsolver(l, n, s, exit_cell, ans, f);
+    // localsolver.solve();
 
     cout << "# completed successfully" << endl;
     return 0;
