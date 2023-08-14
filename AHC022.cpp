@@ -66,12 +66,15 @@ struct Solver{
     }
 };
 
+
 struct LocalJudge {
     vector<vec2> exit_cell;
+    vi measure_cost;
     vi ans, f;
     LocalJudge(vector<vec2> exit_cell, vi ans, vi f)
     : exit_cell(exit_cell), ans(ans), f(f) { }
 
+    //ヒートマップを出力する
     void cout_temperature(const v2i& temperature){
         ofstream output;
         output.open(outputfile);
@@ -85,13 +88,18 @@ struct LocalJudge {
         output.close();
     }
 
-    int measure(int i, int y, int x, int mc, int pval){
+    //答えを予測するための計測を行う
+    int measure(int i, int y, int x, int pval){
         ofstream output;
         output.open(outputfile, ios::app);
         output << i << " " << y << " " << x << endl;
 
-        int v = max(0, min(1000, pval + f[mc]));
-        output << "# pre return value = " <<  v << endl;
+        //インタラクティブ形式の戻り値
+        //pvalは、ワームホールiに対応する出口セルの座標+移動量の座標の温度
+        //f[mc](mc=measure_count)は、正規分布からとってきた擬似値
+        int v = max(0, min(1000, pval + f[(int)measure_cost.size()]));
+        output << "# pre return value = " << v << endl;
+        measure_cost.push_back(10 + abs(y) + abs(x));
         return v;
     }
 
@@ -101,8 +109,6 @@ struct LocalJudge {
         output << "-1 -1 -1" << endl;
         for(int v:estimate) output << v << endl;
         output.close();
-        
-        cout << "completed successfully" << endl;
     }
 
 };
@@ -118,12 +124,14 @@ struct LocalSolver{
     { }
 
     void solve(){
+        // 1. ヒートマップ作成
+        // 2. ヒートマップ出力
+        // 3. ヒートマップを用いてワームホールと出口セルの対応を予測
+        // 4. 予測した 0 ~ N-1 の順列（重複可能）を出力する
         const v2i temperature = create_temperature();
         localjudge.cout_temperature(temperature);
 
-        const pair<vi, int> estimate_rt = predict(temperature);
-        const vi estimate = estimate_rt.first;
-        const int measure_count = estimate_rt.second;
+        const vi estimate = predict(temperature);
         localjudge.answer(estimate);
     }
 
@@ -139,14 +147,14 @@ struct LocalSolver{
         return temperature;
     }
 
-    pair<vi, int> predict(const v2i& temperature){
+    vi predict(const v2i& temperature){
         vi estimate(N);
-        int measure_count = 0;
         //答え丸写し
         // for(int i=0; i<N; i++){
         //     estimate[i] = ans[i];
         // }
-        ////////予測の方法を決める
+        /////////////予測の方法を決める
+        
         for (int i_in = 0; i_in < N; i_in++) {
             // you can output comment
             ofstream output;
@@ -157,8 +165,7 @@ struct LocalSolver{
             vec2 land_pos = exit_cell[ans[i_in]];
             vec2 plus = {0, 0};
             int pval = temperature[land_pos.y+plus.y][land_pos.x+plus.x];
-            int measured_value = localjudge.measure(i_in, 0, 0, measure_count, pval);
-            measure_count++; 
+            int measured_value = localjudge.measure(i_in, 0, 0, pval);
 
             int min_diff = 9999;
             for (int i_out = 0; i_out < N; i_out++) {
@@ -170,10 +177,8 @@ struct LocalSolver{
                 }
             }
         }
-
-
         ///////////////////
-        return {estimate, measure_count};
+        return estimate;
     }
 };
 
@@ -204,6 +209,6 @@ int main(){
     LocalSolver localsolver(l, n, s, exit_cell, ans, f);
     localsolver.solve();
 
-    
+    cout << "# completed successfully" << endl;
     return 0;
 }
