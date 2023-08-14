@@ -8,6 +8,7 @@
 #include <fstream>
 #include <time.h>
 #include <random>
+#include <map>
 #define INF 1e9
 #define vi vector<int>
 #define vb vector<bool>
@@ -25,7 +26,7 @@ const string outputfile = "output.txt";
 
 struct vec2{
     int y, x; 
-    bool operator<(const vec2 right){
+    bool operator<(const vec2 right) const {
         return y == right.y ? x < right.x : y < right.y;
     }
 };
@@ -70,7 +71,7 @@ struct Solver{
         const v2b exit_cell_map = create_cell_map(exit_cell);//出口セルか否かのマップ
         const vector<vector<vec2>> neighbor = BFS(exit_cell_map);
 
-        const vi estimate = predict(temperature);
+        const vi estimate = predict(temperature, neighbor);
         judge.answer(estimate);
 
     }
@@ -83,6 +84,7 @@ struct Solver{
         return exit_cell_map;
     }
 
+    //ある出口セルの近傍の出口セルをBFSでnb個求める
     vector<vector<vec2>> BFS(v2b exit_cell_map){
         vector<vector<vec2>> neighbor(N);
         const vector<vec2> dydx = {{1,0},{0,1},{-1,0},{0,-1}};
@@ -135,26 +137,57 @@ struct Solver{
     v2i create_temperature(){
         v2i temperature(L, vi(L, 0));
         for (int i = 0; i < N; i++) {
-            temperature[exit_cell[i].y][exit_cell[i].x] = 500;
+            temperature[exit_cell[i].y][exit_cell[i].x] = 800;
         }
         return temperature;
     }
     
-    vi predict(const v2i& tempreture){
-        vi estimate(N);
+    vi predict(const v2i& temperature, vector<vector<vec2>> neighbor){
+        set<vec2> exit_set;
+        for(int i=0; i<N; i++) exit_set.insert(exit_cell[i]);
+        map<vec2, int> exit_map;
+        for(int i=0; i<N; i++) exit_map.insert({exit_cell[i], i});
 
-        //全てのワームホールについて、ある出口セルとその近傍の2つの出口セルの差分を出力し、温度の計測を行うことで出口セルかどうか判別する。
-
+        vi estimate(N, 0);
+        const int threshold = 600;
 
         for(int i=0; i<N; i++){
-            estimate[i] = i;
+            int mxcnt = -1, mxj = -1;
+            bool assigned = false;
+
+            for(auto cell:exit_set){
+                vec2 base = cell;
+
+                bool flag = true;
+                int truecnt = 0;
+                int j = exit_map[cell];
+                for(int k=0; k<(int)neighbor[j].size(); k++){
+                    vec2 nb = neighbor[j][k];
+                    int dy = nb.y - base.y;
+                    int dx = nb.x - base.x;
+                    
+                    int v = judge.measure(i, dy, dx);
+
+                    //出口セルか否かここで判断する
+                    if(v < threshold) flag = false;
+                    else truecnt++;
+                }
+                //フラグがtrueなら全てが出口セルだったので元の出口セルを予測値とする
+                if(flag){
+                    assigned = true;
+                    estimate[i] = j; 
+                    exit_set.erase(cell);
+                    break;
+                }
+                //フラグがfalseなら、一部または全部出口セルでなかったので出口セルだった数とjの値を記録しておく
+                if(mxcnt<truecnt){
+                    mxcnt = truecnt; 
+                    mxj = j;
+                }
+            }
+            if(!assigned) estimate[i] = mxj; //一番多く出口セルだったjを予測値として採用する
         }
-
         return estimate;
-    }
-
-    void calculate_cost(){
-
     }
 };
 
@@ -182,15 +215,18 @@ struct LocalJudge {
 
     //答えを予測するための計測を行う
     int measure(int i, int y, int x, int pval){
-        ofstream output;
-        output.open(outputfile, ios::app);
-        output << i << " " << y << " " << x << endl;
-
+       
         //インタラクティブ形式の戻り値
         //pvalは、ワームホールiに対応する出口セルの座標+移動量の座標の温度
         //f[(int)measure_cost.size()]は、正規分布からとってきた擬似値
         int v = max(0, min(1000, pval + f[(int)measure_cost.size()]));
-        output << "# pre return value = " << v << endl;
+
+        ofstream output;
+        output.open(outputfile, ios::app);
+        output << "# return value = " << v << endl;
+        output << i << " " << y << " " << x << endl;
+        output.close();
+
         measure_cost.push_back(10 + abs(y) + abs(x));
         return v;
     }
@@ -219,11 +255,14 @@ struct LocalSolver{
         // 1. ヒートマップ作成
         // 2. ヒートマップ出力
         // 3. ヒートマップを用いてワームホールと出口セルの対応を予測
-        // 4. 予測した 0 ~ N-1 の順列（重複可能）を出力する
+        // 4. 予測した 0 ~ N-1 の順列（重複可能）を予測して出力する
         const v2i temperature = create_temperature();
         localjudge.cout_temperature(temperature);
 
-        const vi estimate = predict(temperature);
+        const v2b exit_cell_map = create_cell_map(exit_cell);//出口セルか否かのマップ
+        const vector<vector<vec2>> neighbor = BFS(exit_cell_map);
+
+        const vi estimate = predict(temperature, neighbor);
         localjudge.answer(estimate);
     }
 
@@ -232,54 +271,139 @@ struct LocalSolver{
         /////////////ヒートマップを決める
 
         for (int i = 0; i < N; i++) {   
-            temperature[exit_cell[i].y][exit_cell[i].x] = i * 10;
+            temperature[exit_cell[i].y][exit_cell[i].x] = 800;
         }
 
         ////////////
         return temperature;
     }
 
-    vi predict(const v2i& temperature){
-        vi estimate(N);
-        //答え丸写し
-        // for(int i=0; i<N; i++){
-        //     estimate[i] = ans[i];
-        // }
-        /////////////予測の方法を決める
+    v2b create_cell_map(const vector<vec2>& exit_cell){
+        v2b exit_cell_map(L, vb(L, false));
+        for(auto v:exit_cell){
+            exit_cell_map[v.y][v.x] = true;
+        }
+        return exit_cell_map;
+    }
 
-        for (int i_in = 0; i_in < N; i_in++) {
-            // you can output comment
-            ofstream output;
-            output.open(outputfile, ios::app);
-            output << "# measure i=" << i_in << " y=0 x=0" << endl;
-            output.close();
+    //ある出口セルの近傍の出口セルをBFSでnb個求める
+    vector<vector<vec2>> BFS(v2b exit_cell_map){
+        vector<vector<vec2>> neighbor(N);
+        const vector<vec2> dydx = {{1,0},{0,1},{-1,0},{0,-1}};
+        const int nb = 2;//近傍の数
 
-            vec2 land_pos = exit_cell[ans[i_in]];
-            vec2 plus = {0, 0};
-            int pval = temperature[land_pos.y+plus.y][land_pos.x+plus.x];
+        for(int i=0; i<N; i++){
+            vec2 cell = exit_cell[i];
+            v2b visit(L, vb(L, false));
+            
+            //マンハッタン距離が小さい順にキューから取り出す
+            auto c = [](pair<int, vec2> l, pair<int, vec2> r){
+                return l.first==r.first ? l.second<r.second : l.first>r.first;
+            };
+            priority_queue<pair<int, vec2>, vector<pair<int, vec2>>, decltype(c)> pq(c);
+            pq.push({0, cell});
 
-            int sum = 0;
-            int times = 10;
-            for(int i=0; i<times; i++){
-                sum += localjudge.measure(i_in, 0, 0, pval);
-            }
-            sum /= times;
+            int cnt = -1;
+            while(cnt<nb){
+                pair<int, vec2> tmp = pq.top();
+                pq.pop();
+                int m_dist = tmp.first;
+                vec2 pv = tmp.second;
 
-            int min_diff = 9999;
-            for (int i_out = 0; i_out < N; i_out++) {
-                const vec2& pos = exit_cell[i_out];
-                int diff = abs(temperature[pos.y][pos.x] - sum);
-                if (diff < min_diff) {
-                    min_diff = diff;
-                    estimate[i_in] = i_out;
+                if(visit[pv.y][pv.x]) continue;
+                if(exit_cell_map[pv.y][pv.x]){
+                    if(cnt>=0) neighbor[i].push_back(pv);
+                    cnt++;
+                }    
+                visit[pv.y][pv.x] = true;
+
+                for(auto d:dydx){
+                    int cy = pv.y + d.y;
+                    int cx = pv.x + d.x;
+                    if(cy<0 || cy>=L || cx<0 || cx>=L || visit[cy][cx]) continue;
+                    pq.push({m_dist+1, {cy, cx}});
                 }
             }
         }
-        ///////////////////
+
+        for(int i=0; i<N; i++){
+            cout << "# (" << exit_cell[i].y << "," << exit_cell[i].x << ")" << ": ";
+            for(int j=0; j<nb; j++){
+                cout << "(" << neighbor[i][j].y << "," << neighbor[i][j].x << ")" << " ";
+            }
+            cout << endl;
+        }
+        return neighbor;
+    }
+
+
+///////////////////予測の方法を決める//////////////////////////////////////////////
+
+    vi predict(const v2i& temperature, vector<vector<vec2>> neighbor){
+
+        set<vec2> exit_set;
+        for(int i=0; i<N; i++) exit_set.insert(exit_cell[i]);
+        //該当出口セルが見つかったらeraseする。これで計算量減らせるね。
+        map<vec2, int> exit_map;
+        for(int i=0; i<N; i++) exit_map.insert({exit_cell[i], i});
+
+        vi estimate(N, 0);
+        const int threshold = 600;//σと初期ヒートマップの値によって可変にしたら良さそう
+
+        //全てのワームホールについて、ある出口セルとその近傍の2つの出口セルの差分を出力し、温度の計測を行うことで出口セルかどうか判別する。
+        for(int i=0; i<N; i++){
+            int mxcnt = -1, mxj = -1;
+            bool assigned = false;
+            vec2 ansi_pos = exit_cell[ans[i]];
+
+            // cout << (int)exit_set.size() << " ";
+            for(auto cell:exit_set){ //近傍の出口セルを計測先として指定し、そこが出口セルかどうか見極める。これによって元の出口セルが判別できる。
+                vec2 base = cell;
+
+                bool flag = true;
+                int truecnt = 0;
+                int j = exit_map[cell];
+                for(int k=0; k<(int)neighbor[j].size(); k++){
+                    vec2 nb = neighbor[j][k];
+                    int dy = nb.y - base.y;
+                    int dx = nb.x - base.x;
+
+                    ofstream output;
+                    output.open(outputfile, ios::app);
+                    output << "# measure i=" << i << " y=" << dy << " x=" << dx << endl;
+                    
+                    
+                    
+                    vec2 mp = {ansi_pos.y+dy, ansi_pos.x+dx};
+                    if(mp.y<0 || mp.y>=L || mp.x<0 || mp.x>=L) {flag = false; continue;}
+                    output << "# mp_pos = ("<<mp.y << ","<<mp.x<<")" << endl;
+                    output.close();
+
+                    int pval = temperature[mp.y][mp.x];
+                    int v = localjudge.measure(i, dy, dx, pval);
+
+                    //出口セルか否かここで判断する
+                    if(v < threshold) flag = false;
+                    else truecnt++;
+                }
+                //フラグがtrueなら全てが出口セルだったので元の出口セルを予測値とする
+                if(flag){
+                    assigned = true;
+                    estimate[i] = j; 
+                    exit_set.erase(cell);
+                    break;
+                }
+                //フラグがfalseなら、一部または全部出口セルでなかったので出口セルだった数とjの値を記録しておく
+                if(mxcnt<truecnt){
+                    mxcnt = truecnt; 
+                    mxj = j;
+                }
+            }
+            if(!assigned) estimate[i] = mxj; //一番多く出口セルだったjを予測値として採用する
+        }
         return estimate;
     }
 };
-
 
 
 int main(){
@@ -307,6 +431,6 @@ int main(){
     // LocalSolver localsolver(l, n, s, exit_cell, ans, f);
     // localsolver.solve();
 
-    cout << "# completed successfully" << endl;
+    // cout << "# completed successfully" << endl;
     return 0;
 }
