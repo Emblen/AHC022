@@ -287,7 +287,7 @@ struct LocalSolver{
         localjudge.cout_temperature(temperature);
 
         vector<vec2> diff_vec = calc_exitcell_diff(nearest);
-        const vi estimate = predict(diff_vec);
+        const vi estimate = predict(temperature, diff_vec);
         localjudge.answer(estimate);
     }
 
@@ -345,8 +345,48 @@ struct LocalSolver{
 
 ///////////////////予測の方法を決める//////////////////////////////////////////////
 
-    vi predict(vector<vec2> diff_vec){
+    vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
+        int threshold = (S<40) ? 50 : min((int)((double)S*2.4), 1000)/2;  //2で割るだけだとやばそう
+        // 0. diff_vecと出口セルの番号を対応させるmapを作成
+        // 1. diff_vecをシャッフル
+        //     2. ワームホールi,diff_y,diff_xを入力として与える
+        //     3. 返ってきた値から、基準セルかどうか判断する
+        //     4. 基準セルと判断した場合、作成したmapにdiffを入れて出口セルの番号を取り出し、ワームホールiの出口セルの予測値とする。
+        //     基準セルではないと判断した場合、返ってきた値の最大値と出口セルの番号を記録して2以降を行う。
+        //     5. 予測値を決めた場合、このdiffを配列から削除する。
+        // 全てのiについてこれを行う   
+        map<vec2, int> diff_exitcellnum;
+        for(int i=0; i<N; i++) diff_exitcellnum.insert({diff_vec[i], i});
+
+        vector<vec2> diff_vec2 = diff_vec;
+
+        for(int i=0; i<N; i++){
+            int mxt = -1;
+            vec2 mxt_vec;
+            bool isconf = false;
+
+            for(int j=0; j<(int)diff_vec2.size(); j++){
+                //localでは、参照するセルの温度を渡す
+                int py = exit_cell[ans[i]].y + diff_vec2[j].y;
+                int px = exit_cell[ans[i]].x + diff_vec2[j].x;
+                int pval = temperature[py][px];
+
+                int t = localjudge.measure(i, diff_vec2[j].y, diff_vec2[j].x, pval);
+
+                if(t>threshold){
+                    estimate[i] = diff_exitcellnum[diff_vec2[j]];
+                    diff_vec2.erase(diff_vec2.begin()+j);
+                    isconf = true;
+                    break;
+                }
+                if(mxt<t){
+                    mxt = t;
+                    mxt_vec = diff_vec2[j];
+                }
+            }
+            if(!isconf) estimate[i] = diff_exitcellnum[mxt_vec];
+        } 
         
         return estimate;
     }
