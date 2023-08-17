@@ -20,6 +20,9 @@
 using namespace std;
 using ll = long long;
 
+const int init_tmp = 1000;
+const int init_threshold = 600;
+
 
 const int max_measure = 10000;
 const string inputfile = "input.txt";
@@ -275,7 +278,7 @@ struct LocalSolver{
     v2i create_temperature(vec2 pivot){
         v2i temperature(L, vi(L, 0));
         // int temp = (S<40) ? 400 : min((int)((double)S*2.4), 1000);
-        int temp = 1000;
+        int temp = init_tmp;
 
         temperature[pivot.y][pivot.x] = temp;
         return temperature;
@@ -304,7 +307,7 @@ struct LocalSolver{
     vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
         // int threshold = (S<40) ? 200 : min((int)((double)S*2.4), 1000)/2*3;  //2で割るだけだとやばそう
-        int threshold = 800;
+        int threshold = init_threshold;
         cout << "# threshold = " << threshold << endl;
         // 0. diff_vecと出口セルの番号を対応させるmapを作成
         // 1. diff_vecをシャッフル
@@ -356,28 +359,28 @@ struct LocalSolver{
 
 int main(){
 //Submit
-    int l, n, s; cin >> l >> n >> s;
-    vector<vec2> exit_cell(n);
-    //全て異なり、辞書順に与えられる
-    for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
+    // int l, n, s; cin >> l >> n >> s;
+    // vector<vec2> exit_cell(n);
+    // //全て異なり、辞書順に与えられる
+    // for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
 
-    Solver solver(l, n, s, exit_cell);
-    solver.solve();
+    // Solver solver(l, n, s, exit_cell);
+    // solver.solve();
 
 //Local
-    // ifstream input(inputfile);
-    // int l, n, s;
-    // vector<vec2> exit_cell(n);
-    // vi ans(n), f(max_measure);
+    ifstream input(inputfile);
+    int l, n, s;
+    vector<vec2> exit_cell(n);
+    vi ans(n), f(max_measure);
 
-    // input >> l >> n >> s;
-    // for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
-    // for(int i=0; i<n; i++) input >> ans[i];
-    // for(int i=0; i<max_measure; i++) input >> f[i];
-    // input.close();
+    input >> l >> n >> s;
+    for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
+    for(int i=0; i<n; i++) input >> ans[i];
+    for(int i=0; i<max_measure; i++) input >> f[i];
+    input.close();
 
-    // LocalSolver localsolver(l, n, s, exit_cell, ans, f);
-    // localsolver.solve();
+    LocalSolver localsolver(l, n, s, exit_cell, ans, f);
+    localsolver.solve();
 
     cout << "# completed successfully" << endl;
     return 0;
