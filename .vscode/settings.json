@@ -6,6 +6,7 @@
         "cstdlib": "cpp",
         "fstream": "cpp",
         "ostream": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "utility": "cpp"
     }
 }
