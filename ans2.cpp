@@ -109,7 +109,7 @@ struct Solver{
     //ヒートマップを生成する
     v2i create_temperature(vec2 pivot){
         v2i temperature(L, vi(L, 0));
-        int temp = (S<40) ? 400 : max(min(400,(int)((double)S*2.4)), 1000);
+        int temp = (S<40) ? 400 : max(min((int)((double)S*2.4), 1000), 500);
         // int temp = 1000;
 
         temperature[pivot.y][pivot.x] = temp;
@@ -138,8 +138,8 @@ struct Solver{
 
     vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
-        int threshold = (S<40) ? 200 : max(200, min((int)((double)S*2.4)*3, 1000));  //2で割るだけだとやばそう
-        if(threshold==1000) threshold -= S/4;
+        int threshold = (S<40) ? 250 : max(300, min((int)((double)S*2.8), 1000)); 
+        if(threshold>=1000-S*4) threshold -= (S/4);
         cout << "# threshold = " << threshold << endl;
         
         map<vec2, int> diff_exitcellnum;
@@ -156,14 +156,21 @@ struct Solver{
                 int t = judge.measure(i, diff_vec2[j].y, diff_vec2[j].x);
 
                 if(t>threshold){
-                    estimate[i] = diff_exitcellnum[diff_vec2[j]];
-                    diff_vec2.erase(diff_vec2.begin()+j);
-                    isconf = true;
-                    break;
-                }
-                if(mxt<t){
-                    mxt = t;
-                    mxt_vec = diff_vec2[j];
+                    if(S>450){ //もう一回
+                        if((judge.measure(i, diff_vec2[j].y, diff_vec2[j].x)) > threshold){
+                            estimate[i] = diff_exitcellnum[diff_vec2[j]];
+                            diff_vec2.erase(diff_vec2.begin()+j);
+                            isconf = true;
+                            break;
+                        }
+                        continue;
+                    }
+                    else{
+                        estimate[i] = diff_exitcellnum[diff_vec2[j]];
+                        diff_vec2.erase(diff_vec2.begin()+j);
+                        isconf = true;
+                        break;
+                    }
                 }
             }
             if(!isconf) estimate[i] = diff_exitcellnum[mxt_vec];
@@ -277,7 +284,7 @@ struct LocalSolver{
     //ヒートマップを生成する
     v2i create_temperature(vec2 pivot){
         v2i temperature(L, vi(L, 0));
-        int temp = (S<40) ? 400 : max(min(400,(int)((double)S*2.4)), 1000);
+        int temp = (S<40) ? 400 : max(min((int)((double)S*4.5), 1000), 500);
         cout << "# temperature = " << temp << endl;
         // int temp = init_tmp;
 
@@ -307,10 +314,11 @@ struct LocalSolver{
 
     vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
-        int threshold = (S<40) ? 200 : max(200, min((int)((double)S*1.2), 1000));  //2で割るだけだとやばそう
-        if(threshold==1000) threshold -= S/4;
+        int threshold = (S<40) ? 250 : max(300, min((int)((double)S*3.2), 1000)); 
+        if(threshold>=1000-S*3) threshold -= (S/3);
+
         // int threshold = init_threshold;
-        // int threshold = 900;
+        // threshold = 800;
         
         cout << "# threshold = " << threshold << endl;
         // 0. diff_vecと出口セルの番号を対応させるmapを作成
@@ -342,11 +350,21 @@ struct LocalSolver{
                 int t = localjudge.measure(i, diff_vec2[j].y, diff_vec2[j].x, pval);
 
                 if(t>threshold){
-                    estimate[i] = diff_exitcellnum[diff_vec2[j]];
-                    diff_vec2.erase(diff_vec2.begin()+j);
-                    isconf = true;
-                    // cout << estimate[i] << " ";
-                    break;
+                    if(S>450){ //もう一回
+                        if((localjudge.measure(i, diff_vec2[j].y, diff_vec2[j].x, pval)) > threshold){
+                            estimate[i] = diff_exitcellnum[diff_vec2[j]];
+                            diff_vec2.erase(diff_vec2.begin()+j);
+                            isconf = true;
+                            break;
+                        }
+                        continue;
+                    }
+                    else{
+                        estimate[i] = diff_exitcellnum[diff_vec2[j]];
+                        diff_vec2.erase(diff_vec2.begin()+j);
+                        isconf = true;
+                        break;
+                    }
                 }
                 if(mxt<t){
                     mxt = t;
