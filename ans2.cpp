@@ -20,16 +20,27 @@
 using namespace std;
 using ll = long long;
 
-const int init_tmp = 1000;
-const int init_threshold = 600;
+const int init_tmp = 100;
+const int init_threshold = 50;
 
 
 const int max_measure = 10000;
 const string inputfile = "input.txt";
 const string outputfile = "output.txt";
 
-const vi temp_vec = {400, 400, 500, 800, 800, 1000, 1000, 1000, 1000, 1000};
-const vi threshold_vec = {200, 200, 350, 600, 600, 800, 800, 800, 800, 800};
+const vi temp_vec = {100,100,100,150,200,
+                    400,400,400,500,500,
+                    600,800,800,800,800,
+                    800,1000,1000,1000,1000,
+                    1000,1000,1000,1000,1000,
+                    1000,1000,1000,1000,1000};
+
+const vi threshold_vec = {50,50,50,80,100,
+                        200,200,200,300,350,
+                        450,600,600,600,650,
+                        670,800,800,800,850,
+                        850,850,850,850,850,
+                        850,850,850,850,950};
 
 struct vec2{
     int y, x; 
@@ -109,7 +120,8 @@ struct Solver{
     //ヒートマップを生成する
     v2i create_temperature(vec2 pivot){
         v2i temperature(L, vi(L, 0));
-        int temp = (S<40) ? 400 : max(min((int)((double)S*2.4), 1000), 500);
+        int temp = temp_vec[sqrt(S)-1];
+        cout << "# temp = " << temp << endl;
         // int temp = 1000;
 
         temperature[pivot.y][pivot.x] = temp;
@@ -138,8 +150,7 @@ struct Solver{
 
     vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
-        int threshold = (S<40) ? 250 : max(300, min((int)((double)S*2.8), 1000)); 
-        if(threshold>=1000-S*4) threshold -= (S/4);
+        int threshold = threshold_vec[sqrt(S)-1];
         cout << "# threshold = " << threshold << endl;
         
         map<vec2, int> diff_exitcellnum;
@@ -151,6 +162,10 @@ struct Solver{
             int mxt = -1;
             vec2 mxt_vec;
             bool isconf = false;
+
+            std::random_device seed_gen;
+            std::mt19937 engine(seed_gen());
+            shuffle(all(diff_vec2), seed_gen);
 
             for(int j=0; j<(int)diff_vec2.size(); j++){
                 int t = judge.measure(i, diff_vec2[j].y, diff_vec2[j].x);
@@ -284,9 +299,9 @@ struct LocalSolver{
     //ヒートマップを生成する
     v2i create_temperature(vec2 pivot){
         v2i temperature(L, vi(L, 0));
-        int temp = (S<40) ? 400 : max(min((int)((double)S*4.5), 1000), 500);
-        cout << "# temperature = " << temp << endl;
+        int temp = temp_vec[sqrt(S)-1];
         // int temp = init_tmp;
+        cout << "# temperature = " << temp << endl;
 
         temperature[pivot.y][pivot.x] = temp;
         return temperature;
@@ -314,11 +329,7 @@ struct LocalSolver{
 
     vi predict(v2i temperature, vector<vec2> diff_vec){
         vi estimate(N, 0);
-        int threshold = (S<40) ? 250 : max(300, min((int)((double)S*3.2), 1000)); 
-        if(threshold>=1000-S*3) threshold -= (S/3);
-
-        // int threshold = init_threshold;
-        // threshold = 800;
+        int threshold = threshold_vec[sqrt(S)-1];
         
         cout << "# threshold = " << threshold << endl;
         // 0. diff_vecと出口セルの番号を対応させるmapを作成
@@ -338,6 +349,10 @@ struct LocalSolver{
             int mxt = -1;
             vec2 mxt_vec;
             bool isconf = false;
+
+            std::random_device seed_gen;
+            std::mt19937 engine(seed_gen());
+            shuffle(diff_vec2.begin(), diff_vec2.end(), seed_gen);
 
             for(int j=0; j<(int)diff_vec2.size(); j++){
                 //localでは、参照するセルの温度を渡す
@@ -373,7 +388,6 @@ struct LocalSolver{
             }
             if(!isconf) estimate[i] = diff_exitcellnum[mxt_vec];
         } 
-        
         return estimate;
     }
 };
