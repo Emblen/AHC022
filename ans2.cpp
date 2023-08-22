@@ -344,15 +344,15 @@ struct LocalSolver{
         for(int i=0; i<N; i++) diff_exitcellnum.insert({diff_vec[i], i});
 
         vector<vec2> diff_vec2 = diff_vec;
+
+        sort(diff_vec2.begin(), diff_vec2.end(), [](const vec2& l, const vec2& r){
+            return abs(l.y)==abs(r.y) ? abs(l.x)<abs(r.x) : abs(l.y)<abs(r.y);
+        });
         
         for(int i=0; i<N; i++){
             int mxt = -1;
             vec2 mxt_vec;
             bool isconf = false;
-
-            std::random_device seed_gen;
-            std::mt19937 engine(seed_gen());
-            shuffle(diff_vec2.begin(), diff_vec2.end(), seed_gen);
 
             for(int j=0; j<(int)diff_vec2.size(); j++){
                 //localでは、参照するセルの温度を渡す
@@ -395,28 +395,28 @@ struct LocalSolver{
 
 int main(){
 //Submit
-    int l, n, s; cin >> l >> n >> s;
-    vector<vec2> exit_cell(n);
-    //全て異なり、辞書順に与えられる
-    for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
+    // int l, n, s; cin >> l >> n >> s;
+    // vector<vec2> exit_cell(n);
+    // //全て異なり、辞書順に与えられる
+    // for(int i=0; i<n; i++) cin >> exit_cell[i].y >> exit_cell[i].x;
 
-    Solver solver(l, n, s, exit_cell);
-    solver.solve();
+    // Solver solver(l, n, s, exit_cell);
+    // solver.solve();
 
 //Local
-    // ifstream input(inputfile);
-    // int l, n, s;
-    // vector<vec2> exit_cell(n);
-    // vi ans(n), f(max_measure);
+    ifstream input(inputfile);
+    int l, n, s;
+    vector<vec2> exit_cell(n);
+    vi ans(n), f(max_measure);
 
-    // input >> l >> n >> s;
-    // for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
-    // for(int i=0; i<n; i++) input >> ans[i];
-    // for(int i=0; i<max_measure; i++) input >> f[i];
-    // input.close();
+    input >> l >> n >> s;
+    for(int i=0; i<n; i++) input >> exit_cell[i].y >> exit_cell[i].x;
+    for(int i=0; i<n; i++) input >> ans[i];
+    for(int i=0; i<max_measure; i++) input >> f[i];
+    input.close();
 
-    // LocalSolver localsolver(l, n, s, exit_cell, ans, f);
-    // localsolver.solve();
+    LocalSolver localsolver(l, n, s, exit_cell, ans, f);
+    localsolver.solve();
 
     cout << "# completed successfully" << endl;
     return 0;
