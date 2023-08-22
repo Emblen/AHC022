@@ -142,9 +142,7 @@ struct Solver{
         vector<vec2> diff_vec2 = diff_vec;
 
         sort(diff_vec2.begin(), diff_vec2.end(), [](const vec2& l, const vec2& r){
-            int sl = abs(l.y)+abs(l.x);
-            int sr = abs(r.y)+abs(r.x);
-            return sl<sr;
+            return l.y*l.y+l.x*l.x < r.y*r.y+r.x*r.x;
         });
         
         for(int i=0; i<N; i++){
